@@ -86,8 +86,10 @@ function DisplayTodo() {
         actions.appendChild(deleteButton)
         todoList.appendChild(todoItem)
 
+        // set default done class
         if(todo.done) todoItem.classList.add('done')
 
+        // make checked list function
         input.addEventListener('click', e => {
             todo.done = e.target.checked
             localStorage.setItem('todos', JSON.stringify(todos))
@@ -96,6 +98,7 @@ function DisplayTodo() {
             if(!todo.done) todoItem.classList.remove('done')
         })
 
+        // make edit function
         edit.addEventListener('click', e => {
             const input = document.querySelector('.content-list')
             edit.innerText = 'Save'
@@ -112,6 +115,7 @@ function DisplayTodo() {
             })
         })
 
+        // make delete function
         deleteButton.addEventListener('click', e => {
             let ask = confirm('Are u sure to delete this task?')
             if (ask) {
