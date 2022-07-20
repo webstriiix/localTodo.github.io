@@ -1,0 +1,176 @@
+:root {
+    --blue : #C6CFFF;
+    --whiteBlue : #DEECFF;
+    --white : #F3F8FF;
+    --roboto : 'Roboto', sans-serif;
+    --edu : 'Edu NSW ACT Foundation', cursive;
+    --business: #3a82ee;
+    --business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.red{
+    color: salmon;
+}
+    
+body {
+    background-color: var(--blue);
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--roboto);
+    padding: 5px;
+
+}
+
+input, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+
+main {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    min-width: max-content  ;
+    width: 90%;
+    max-width: 60vw;
+    border: 5px double var(--white);
+    border-radius: 20px;
+}
+
+.add-todo {
+    border: 2px solid var(--white);
+    padding: 5px 5px 5px 5px;
+    border-radius:10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.add-todo .submit-actions {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.add-todo #inputTodo {
+    background: var(--whiteBlue);
+    min-width: 200px;
+    height: 50px;
+    width: 40vw;
+    border-radius: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: var(--edu);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+.bubble {
+    margin: 5px 5px 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--business);
+    box-shadow: var(--business-glow);
+}
+
+.bubble::after {
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: var(--business);
+    box-shadow: var(--business-glow);
+    border-radius: 50%;
+    transition: .25s ease-in-out;
+}
+
+input:checked ~ .bubble::after {
+    width: 13px;
+    height: 13px;
+    opacity: 1;
+}
+
+button, .inputButton {
+    background: #E8D3FF;
+    padding: 5px;
+    margin-right: 6px;
+    min-width: 50px;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover, .inputButton:hover {
+    opacity: .5;
+}
+
+.deleteAll, .delete {
+    color: red;
+}
+
+.inputButton, .edit {
+    color: goldenrod;
+}
+
+.todo-list{
+    margin-top: 50px;
+}
+
+.list {
+    padding: 10px;
+    border: 2px solid var(--white);
+    border-radius: 20px;
+    min-width: 400px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-item{
+    margin-bottom: 20px;
+}
+
+.todo-item #content_list {
+    margin-bottom: 5px;
+    padding: 0px 5px 0px 5px;
+    border: 2px solid var(--whiteBlue);
+    height: 50px;
+    background-color: #E8D3FF;
+    font-family: var(--edu);
+    text-align: center;
+    width: 50vw;
+    border-radius: 20px;
+}
+
+.todo-item.done .todo-content input {   
+    font-weight: bold;
+    text-decoration: line-through;
+    color: brown;
+}
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <!-- my css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Local Storage Todo List</title>
+</head>
+<body>
+    <main>
+
+        <form  class="add-todo">
+                <input type="text" name="inputTodo" id="inputTodo" placeholder="input ur todo here">
+                <div class="submit-actions">
+                   <input type="submit" class="inputButton" value="addTodo">
+                </div>
+            </form>
+
+        <div class="todo-list">
+            <h2>Todo List :</h2>
+
+                <div class="list">
+
+                    <div class="todo-item ">
+                        <label> 
+                            <input type="checkbox" />
+                            <span class="bubble"></span>
+                        </label>
+                        <div class="todo-content">
+                            <input type="text"  id="content_list" value="testing" readonly>
+                        </div>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    
+
+                </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
