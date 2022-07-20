@@ -38,13 +38,13 @@ input, button {
 
 main {
     margin-top: 20px;
-    padding: 10px;
+    padding: .2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-self: center;
-    min-width: max-content  ;
+    min-width: max-content;
     width: 90%;
     max-width: 60vw;
     border: 5px double var(--white);
@@ -53,7 +53,7 @@ main {
 
 .add-todo {
     border: 2px solid var(--white);
-    padding: 5px 5px 5px 5px;
+    padding: 1.5rem;
     border-radius:10px;
     display: flex;
     flex-direction: row;
@@ -143,10 +143,10 @@ button:hover, .inputButton:hover {
 }
 
 .list {
-    padding: 10px;
+    margin: .5rem;
     border: 2px solid var(--white);
     border-radius: 20px;
-    min-width: 400px ;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
