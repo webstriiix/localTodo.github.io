@@ -117,6 +117,7 @@ function createTodoElement(todo, index) {
   // Create main container
   const todoItem = document.createElement('div');
   todoItem.classList.add('todo-item');
+  todoItem.dataset.index = index; // Add index to the parent item
   if (todo.done) todoItem.classList.add('done');
   
   // Create checkbox
@@ -138,6 +139,7 @@ function createTodoElement(todo, index) {
   
   const inputValue = document.createElement('input');
   inputValue.classList.add('content-list');
+  inputValue.id = `todo-input-${index}`; // Give each input a unique ID
   inputValue.value = todo.content;
   inputValue.readOnly = true;
   inputValue.dataset.index = index;
@@ -151,6 +153,7 @@ function createTodoElement(todo, index) {
   editButton.classList.add('edit');
   editButton.textContent = 'Edit';
   editButton.dataset.index = index;
+  editButton.dataset.inputId = `todo-input-${index}`; // Reference the input by ID
   editButton.addEventListener('click', handleEditTodo);
   
   const deleteButton = document.createElement('button');
@@ -187,7 +190,8 @@ function handleToggleTodo(e) {
  */
 function handleEditTodo(e) {
   const index = parseInt(e.target.dataset.index);
-  const inputElement = document.querySelectorAll('.content-list')[index];
+  const inputId = e.target.dataset.inputId;
+  const inputElement = document.getElementById(inputId);
   const button = e.target;
   
   if (button.textContent === 'Edit') {
@@ -253,3 +257,4 @@ function handleDeleteTodo(e) {
 }
 
 alert('This app uses your browser local storage');
+
